@@ -25,11 +25,13 @@ const Cross = ({ color }) =>
 const styles = StyleSheet.create({
     container: {
         position: 'relative',
+        flex: 1,
         width: 80,
         height: 80
     },
     line: {
         position: 'absolute',
+        left: 35,
         width: 8,
         height: 105
     }
