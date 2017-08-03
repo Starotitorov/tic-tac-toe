@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
     StyleSheet,
-    View
+    View,
+    Text
 } from 'react-native';
 import Game from './Game';
 
@@ -9,7 +10,7 @@ export default class App extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Game/>
+                <Game />
             </View>
         );
     }
