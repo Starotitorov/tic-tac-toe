@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TicTacToe from 'tictactoe-agent';
 import Board from './Board';
 import {
     View
@@ -6,6 +7,8 @@ import {
 import {
     CIRCLE,
     CROSS,
+    EMPTY,
+    DRAW,
     VICTORY_CONDITIONS
 } from './constants';
 
@@ -17,12 +20,12 @@ export default class Game extends Component {
         super(props);
 
         this.state = {
-            board: [null, null, null, null, null, null, null, null, null]
+            board: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY]
         };
     }
 
     _populateTile(index, figure, onFinish=f=>f) {
-        if (this.state.board[index]) {
+        if (this.state.board[index] !== EMPTY) {
             return;
         }
 
@@ -44,27 +47,23 @@ export default class Game extends Component {
     };
 
     _AIAct() {
-        const tilesToChooseFrom = this.state.board.reduce((tiles, value, index) => {
-            if (value === null) {
-                tiles.push(index);
-            }
+        const input = this.state.board.join('');
+        const model = new TicTacToe.Model(input, AI_FIGURE);
+        const recommendation = model.getRecommendation();
 
-            return tiles;
-        }, []);
-
-        const randomChoice = Math.floor(Math.random() * tilesToChooseFrom.length);
-        const chosenTile = tilesToChooseFrom[randomChoice];
-
-        this._populateTile(chosenTile, AI_FIGURE);
+        this._populateTile(recommendation.index, AI_FIGURE);
     }
 
     _judgeWinner() {
-        let winner = null;
+        if (!this.state.board.some(figure => figure === EMPTY)) {
+            return DRAW;
+        }
 
+        let winner = null;
         for (let i = 0; i < VICTORY_CONDITIONS.length; ++i) {
             let figure = this.state.board[VICTORY_CONDITIONS[i][0]];
 
-            if (VICTORY_CONDITIONS[i].every(tile => this.state.board[tile] === figure)) {
+            if (VICTORY_CONDITIONS[i].every(tile => this._checkTile(tile, figure))) {
                 winner = figure;
                 break;
             }
@@ -73,9 +72,14 @@ export default class Game extends Component {
         return winner;
     }
 
+    _checkTile(tile, figure) {
+        return this.state.board[tile] === figure &&
+            this.state.board[tile] !== EMPTY;
+    }
+
     _clearField() {
         this.setState({
-            board: [null, null, null, null, null, null, null, null, null]
+            board: [EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY, EMPTY]
         });
     }
 

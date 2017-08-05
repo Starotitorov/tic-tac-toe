@@ -9,7 +9,8 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
-    "react-native": "0.47.1"
+    "react-native": "0.47.1",
+    "tictactoe-agent": "^2.1.2"
   },
   "devDependencies": {
     "babel-jest": "20.0.3",
