@@ -1,5 +1,7 @@
-export const CIRCLE = 0;
-export const CROSS = 1;
+export const CIRCLE = 'O';
+export const CROSS = 'X';
+export const EMPTY = '-';
+export const DRAW = 'draw';
 
 export const VICTORY_CONDITIONS = [
     [0, 1, 2],
