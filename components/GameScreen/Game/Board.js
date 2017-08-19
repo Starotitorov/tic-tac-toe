@@ -51,6 +51,8 @@ export default class Board extends Component {
 const styles = StyleSheet.create({
     container: {
         backgroundColor: 'darkgrey',
+        borderColor: '#fff',
+        borderWidth: 1,
         flexDirection: 'column'
     },
     row: {
