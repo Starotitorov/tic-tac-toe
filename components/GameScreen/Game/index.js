@@ -5,15 +5,12 @@ import {
     View
 } from 'react-native';
 import {
-    CIRCLE,
-    CROSS,
+    USER_FIGURE,
+    AI_FIGURE,
     EMPTY,
     DRAW,
     VICTORY_CONDITIONS
 } from './constants';
-
-const USER_FIGURE = CIRCLE;
-const AI_FIGURE = CROSS;
 
 export default class Game extends Component {
     constructor(props) {
@@ -37,8 +34,10 @@ export default class Game extends Component {
                 board
             },
             () => {
-                if (this._judgeWinner() !== null) {
-                    this._clearField();
+                const result = this._judgeWinner();
+
+                if (result !== null) {
+                    this.props.onFinish(result);
                 }
 
                 onFinish();
