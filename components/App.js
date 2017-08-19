@@ -1,26 +1,11 @@
 import React, { Component } from 'react';
-import {
-    StyleSheet,
-    View,
-    Text
-} from 'react-native';
-import Game from './Game';
+import AppNavigator from './AppNavigator';
 
 export default class App extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Game />
-            </View>
+            <AppNavigator />
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
-    }
-});
 
