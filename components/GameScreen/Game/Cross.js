@@ -1,39 +1,21 @@
-import React, { Component } from 'react'
-import {
-    StyleSheet,
-    View
-} from 'react-native'
+import React from 'react'
+import { StyleSheet } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { FIGURE_SIZE } from './constants'
 
 const Cross = ({ color }) =>
     (
-        <View style={styles.container}>
-            <View style={[styles.line, {
-                transform: [
-                    {rotate: '45deg'},
-                ],
-                backgroundColor: color
-            }]} />
-            <View style={[styles.line, {
-                transform: [
-                    {rotate: '135deg'},
-                ],
-                backgroundColor: color
-            }]} />
-        </View>
+        <Icon
+            name="times"
+            color={color}
+            size={FIGURE_SIZE}
+            style={styles.icon}
+        />
     );
 
 const styles = StyleSheet.create({
-    container: {
-        position: 'relative',
-        flex: 1,
-        width: 80,
-        height: 80
-    },
-    line: {
-        position: 'absolute',
-        left: 35,
-        width: 8,
-        height: 105
+    icon: {
+        paddingBottom: 4
     }
 });
 

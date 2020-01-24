@@ -1,1 +1,3 @@
-React Native tic tac toe game
+# TicTacToe
+
+An implementation of a "Tic-Tac-Toe" game using React Native.
