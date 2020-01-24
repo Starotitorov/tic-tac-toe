@@ -1,22 +1,10 @@
-import React, { Component } from 'react'
-import {
-    StyleSheet,
-    View
-} from 'react-native'
+import React from 'react'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import { FIGURE_SIZE } from './constants'
 
 const Circle = ({ color }) =>
     (
-        <View style={[styles.container, { borderColor: color }]}>
-        </View>
+        <Icon name="circle-o" color={color} size={FIGURE_SIZE} />
     );
-
-const styles = StyleSheet.create({
-    container: {
-        width: 80,
-        height: 80,
-        borderWidth: 8,
-        borderRadius: 40,
-    }
-});
 
 export default Circle;

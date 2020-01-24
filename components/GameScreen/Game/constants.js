@@ -15,3 +15,5 @@ export const VICTORY_CONDITIONS = [
     [0, 4, 8],
     [2, 4, 6]
 ];
+
+export const FIGURE_SIZE = 85;
