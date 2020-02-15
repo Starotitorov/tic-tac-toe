@@ -15,7 +15,7 @@ const Cross = ({ color }) =>
 
 const styles = StyleSheet.create({
     icon: {
-        paddingBottom: 5
+        paddingBottom: 6
     }
 });
 
