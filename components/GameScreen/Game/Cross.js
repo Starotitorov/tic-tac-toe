@@ -1,22 +1,25 @@
 import React from 'react'
-import { StyleSheet } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
-import { FIGURE_SIZE } from './constants'
+import { Svg, Line } from 'react-native-svg';
+import { FIGURE_SIZE, STROKE_WIDTH, FIGURE_PADDING } from './constants';
 
 const Cross = ({ color }) =>
     (
-        <Icon
-            name="times"
-            color={color}
-            size={FIGURE_SIZE}
-            style={styles.icon}
-        />
+        <Svg height={FIGURE_SIZE} width={FIGURE_SIZE}>
+            <Line
+                x1={FIGURE_PADDING}
+                y1={FIGURE_SIZE - FIGURE_PADDING}
+                x2={FIGURE_SIZE - FIGURE_PADDING}
+                y2={FIGURE_PADDING}
+                stroke={color}
+                strokeWidth={STROKE_WIDTH} />
+            <Line
+                x1={FIGURE_PADDING}
+                y1={FIGURE_PADDING}
+                x2={FIGURE_SIZE - FIGURE_PADDING}
+                y2={FIGURE_SIZE - FIGURE_PADDING}
+                stroke={color}
+                strokeWidth={STROKE_WIDTH} />
+        </Svg>
     );
-
-const styles = StyleSheet.create({
-    icon: {
-        paddingBottom: 6
-    }
-});
 
 export default Cross;

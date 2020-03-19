@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "16.6.3",
-    "react-native": "0.58.3",
-    "react-native-vector-icons": "^6.2.0",
+    "react": "16.8.3",
+    "react-native": "0.59.9",
+    "react-native-svg": "^8.0.11",
     "react-navigation": "1.0.0-beta.11",
     "tictactoe-agent": "2.1.2"
   },
@@ -18,7 +18,7 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "24.0.0",
     "jest": "24.0.0",
-    "metro-react-native-babel-preset": "0.51.1",
+    "metro-react-native-babel-preset": "0.59.0",
     "react-test-renderer": "16.6.3"
   },
   "jest": {

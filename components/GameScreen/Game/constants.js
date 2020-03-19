@@ -16,4 +16,6 @@ export const VICTORY_CONDITIONS = [
     [2, 4, 6]
 ];
 
-export const FIGURE_SIZE = 85;
+export const FIGURE_SIZE = 80;
+export const STROKE_WIDTH = 8;
+export const FIGURE_PADDING = 5;
